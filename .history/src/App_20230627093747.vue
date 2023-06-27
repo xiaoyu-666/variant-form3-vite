@@ -36,8 +36,7 @@ export default {
         testPort: 8080,
       },
       webConfig:{
-        BEAUTIFIER_PATH_CUS:'',
-        ACE_BASE_PATH_CUS:''
+        BEAUTIFIER_PATH_CUS:'https://ks3-cn-beijing.ksyun.com/vform2021/js-beautify/1.14.0/beautifier.min2.js'
       }
 
     }

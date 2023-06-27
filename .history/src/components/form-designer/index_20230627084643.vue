@@ -172,6 +172,16 @@
         getWebConfig: () => this.webConfig,
       }
     },
+    watch:{
+      'webConfig.BEAUTIFIER_PATH_CUS':{
+        deep: true,
+        immediate: true,
+        handler(val) {
+          //
+          console.log(val)
+        }
+      }
+    },
     created() {
       this.vsCodeFlag = getQueryParam('vscode') == 1
       this.caseName = getQueryParam('case')

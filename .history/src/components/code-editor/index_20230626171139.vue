@@ -48,7 +48,7 @@
     mounted() {
       const {ACE_BASE_PATH_CUS}=this.getWebConfig()
       //ace.config.set('basePath', 'https://ks3-cn-beijing.ksyun.com/vform2021/ace')
-      ace.config.set('basePath',isEmptyStr(ACE_BASE_PATH_CUS) ?ACE_BASE_PATH:ACE_BASE_PATH_CUS)
+      ace.config.set('basePath', ACE_BASE_PATH)
 
       this.addAutoCompletion(ace)  //添加自定义代码提示！！
 

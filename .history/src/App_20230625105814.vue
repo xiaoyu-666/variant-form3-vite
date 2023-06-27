@@ -1,7 +1,7 @@
 <template>
   <el-config-provider :locale="elLocale">
   <div id="app">
-    <VFormDesigner ref="vfDesignerRef" :web-config="webConfig" :global-dsv="globalDsv">
+    <VFormDesigner ref="vfDesignerRef" :global-dsv="globalDsv">
       <!--
       <template #customToolButtons>
         <el-button type="text" @click="doTest">测试btn</el-button>
@@ -35,10 +35,6 @@ export default {
         testApiHost: 'http://www.test.com/api',
         testPort: 8080,
       },
-      webConfig:{
-        BEAUTIFIER_PATH_CUS:'',
-        ACE_BASE_PATH_CUS:''
-      }
 
     }
   },

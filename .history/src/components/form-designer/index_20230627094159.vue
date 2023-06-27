@@ -69,7 +69,7 @@
   import VFormWidget from './form-widget/index'
   import {createDesigner} from "@/components/form-designer/designer"
   import {addWindowResizeHandler, deepClone, getQueryParam, getAllContainerWidgets,
-    getAllFieldWidgets, traverseAllWidgets} from "@/utils/util"
+    getAllFieldWidgets, traverseAllWidgets, isEmptyStr} from "@/utils/util"
   import {MOCK_CASE_URL, VARIANT_FORM_VERSION} from "@/utils/config"
   import i18n, { changeLocale } from "@/utils/i18n"
   import axios from 'axios'
@@ -236,7 +236,7 @@
           return
         }
 
-        axios.get(MOCK_CASE_URL + this.caseName + '.txt').then(res => {
+        axios.get(isEmptyStr(this.webConfig.MOCK_CASE_URL_CUS)? MOCK_CASE_URL:this.webConfig.MOCK_CASE_URL_CUS + this.caseName + '.txt').then(res => {
           if (!!res.data.code) {
             this.$message.error(this.i18nt('designer.hint.sampleLoadedFail'))
             return

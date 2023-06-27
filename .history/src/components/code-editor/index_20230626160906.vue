@@ -6,12 +6,11 @@
 </template>
 
 <script>
-  import {isEmptyStr} from "@/utils/util"
   import ace from 'ace-builds'
   /* 启用此行后webpack打包回生成很多动态加载的js文件，不便于部署，故禁用！！
      特别提示：禁用此行后，需要调用ace.config.set('basePath', 'path...')指定动态js加载URL！！
    */
-  //import 'ace-builds/webpack-resolver'
+  import 'ace-builds/webpack-resolver'
 
   //import 'ace-builds/src-min-noconflict/theme-monokai' // 默认设置的主题
   import 'ace-builds/src-min-noconflict/theme-sqlserver' // 新设主题
@@ -19,7 +18,6 @@
   import 'ace-builds/src-min-noconflict/mode-json' //
   import 'ace-builds/src-min-noconflict/mode-css' //
   import 'ace-builds/src-min-noconflict/ext-language_tools'
-
   import {ACE_BASE_PATH} from "@/utils/config";
 
   export default {
@@ -44,11 +42,9 @@
 
     },
     emits: ['update:modelValue'],
-    inject:['getWebConfig'],
     mounted() {
-      const {ACE_BASE_PATH_CUS}=this.getWebConfig()
       //ace.config.set('basePath', 'https://ks3-cn-beijing.ksyun.com/vform2021/ace')
-      ace.config.set('basePath',isEmptyStr(ACE_BASE_PATH_CUS) ?ACE_BASE_PATH:ACE_BASE_PATH_CUS)
+      // ace.config.set('basePath', ACE_BASE_PATH)
 
       this.addAutoCompletion(ace)  //添加自定义代码提示！！
 

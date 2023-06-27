@@ -193,7 +193,7 @@
     copyToClipboard,
     generateId,
     getQueryParam,
-    traverseAllWidgets, addWindowResizeHandler,isEmptyStr
+    traverseAllWidgets, addWindowResizeHandler
   } from "@/utils/util"
   import i18n from '@/utils/i18n'
   import {generateCode} from "@/utils/code-generator"
@@ -219,7 +219,7 @@
         default: () => ({})
       },
     },
-    inject: ['getDesignerConfig','getWebConfig'],
+    inject: ['getDesignerConfig'],
     data() {
       return {
         designerConfig: this.getDesignerConfig(),
@@ -315,10 +315,6 @@
 
     },
     mounted() {
-
-      console.log("toolbar",this.getWebConfig())
-
-
       let maxTBWidth = this.designerConfig.toolbarMaxWidth || 460
       let minTBWidth = this.designerConfig.toolbarMinWidth || 300
       let newTBWidth = window.innerWidth - 260 - 300 - 320 - 80
@@ -570,12 +566,11 @@
       },
 
       generateSFC() {
-        const {BEAUTIFIER_PATH_CUS} = this.getWebConfig()
         loadBeautifier(beautifier => {
           this.sfcCode = genSFC(this.designer.formConfig, this.designer.widgetList, beautifier)
           this.sfcCodeV3 = genSFC(this.designer.formConfig, this.designer.widgetList, beautifier, true)
           this.showExportSFCDialogFlag = true
-        },isEmptyStr(BEAUTIFIER_PATH_CUS)?'':BEAUTIFIER_PATH_CUS)
+        })
       },
 
       copyV2SFC(e) {

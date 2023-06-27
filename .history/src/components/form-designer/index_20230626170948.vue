@@ -125,13 +125,15 @@
           }
         }
       },
+
+
       webConfig: {
         type: Object,
         default: () => {
           return {
-            MOCK_CASE_URL_CUS:'',
-            ACE_BASE_PATH_CUS:'',
-            BEAUTIFIER_PATH_CUS:''
+            ACE_BASE_PATH :'',
+            BEAUTIFIER_PATH:''
+
           }
         }
       },
@@ -169,7 +171,6 @@
         serverFieldList: this.fieldList,
         getDesignerConfig: () => this.designerConfig,
         getBannedWidgets: () => this.bannedWidgets,
-        getWebConfig: () => this.webConfig,
       }
     },
     created() {

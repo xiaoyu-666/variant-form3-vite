@@ -69,7 +69,7 @@ export default function loadBeautifier(callback,BEAUTIFIER_PATH_CUS) {
     return
   }
 
-  loadRemoteScript(isEmptyStr(BEAUTIFIER_PATH_CUS)?BEAUTIFIER_PATH:BEAUTIFIER_PATH_CUS, () => {
+  loadRemoteScript(BEAUTIFIER_PATH, () => {
     // eslint-disable-next-line no-undef
     beautifierObj = beautifier  //beautifier为全局对象
     callback(beautifierObj)

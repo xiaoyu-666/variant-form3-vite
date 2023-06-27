@@ -129,7 +129,6 @@
         type: Object,
         default: () => {
           return {
-            MOCK_CASE_URL_CUS:'',
             ACE_BASE_PATH_CUS:'',
             BEAUTIFIER_PATH_CUS:''
           }

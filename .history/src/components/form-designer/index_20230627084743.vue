@@ -74,6 +74,7 @@
   import i18n, { changeLocale } from "@/utils/i18n"
   import axios from 'axios'
   import SvgIcon from "@/components/svg-icon/index"
+  import {BEAUTIFIER_PATH} "@/utils/config"
 
   export default {
     name: "VFormDesigner",
@@ -170,6 +171,16 @@
         getDesignerConfig: () => this.designerConfig,
         getBannedWidgets: () => this.bannedWidgets,
         getWebConfig: () => this.webConfig,
+      }
+    },
+    watch:{
+      'webConfig.BEAUTIFIER_PATH_CUS':{
+        deep: true,
+        immediate: true,
+        handler(val) {
+          //
+          console.log(val)
+        }
       }
     },
     created() {

@@ -193,7 +193,7 @@
     copyToClipboard,
     generateId,
     getQueryParam,
-    traverseAllWidgets, addWindowResizeHandler,isEmptyStr
+    traverseAllWidgets, addWindowResizeHandler
   } from "@/utils/util"
   import i18n from '@/utils/i18n'
   import {generateCode} from "@/utils/code-generator"
@@ -575,7 +575,7 @@
           this.sfcCode = genSFC(this.designer.formConfig, this.designer.widgetList, beautifier)
           this.sfcCodeV3 = genSFC(this.designer.formConfig, this.designer.widgetList, beautifier, true)
           this.showExportSFCDialogFlag = true
-        },isEmptyStr(BEAUTIFIER_PATH_CUS)?'':BEAUTIFIER_PATH_CUS)
+        },)
       },
 
       copyV2SFC(e) {
