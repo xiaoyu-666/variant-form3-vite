@@ -10,7 +10,7 @@
 
 <template>
   <el-container class="main-container full-height">
-    <el-header v-if="showLink('logoHeader')" class="main-header">
+    <!-- <el-header class="main-header">
       <div class="float-left main-title">
         <img src="../../assets/vform-logo.png" @click="openHome">
         <span class="bold">VForm 3</span> {{i18nt('application.productTitle')}} <span class="version-span">Ver {{vFormVersion}}</span></div>
@@ -30,7 +30,7 @@
         <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, subScribeUrl)" target="_blank">
           {{i18nt('application.subscription')}}<i class="el-icon-top-right"></i></a>
       </div>
-    </el-header>
+    </el-header> -->
 
     <el-container>
       <el-aside class="side-panel">
@@ -103,7 +103,7 @@
         type: Object,
         default: () => {
           return {
-            logoHeader: false,
+            logoHeader: true,
             languageMenu: true,  //是否显示语言切换菜单
             externalLink: true,  //是否显示GitHub、文档等外部链接
             formTemplates: true,  //是否显示表单模板

@@ -315,6 +315,10 @@
 
     },
     mounted() {
+
+      console.log("toolbar",this.getWebConfig())
+
+
       let maxTBWidth = this.designerConfig.toolbarMaxWidth || 460
       let minTBWidth = this.designerConfig.toolbarMinWidth || 300
       let newTBWidth = window.innerWidth - 260 - 300 - 320 - 80
@@ -748,7 +752,6 @@
     line-height: 42px;
     text-align: right;
     overflow: hidden;
-    justify-content:flex-end;
 
     .right-toolbar-con {
       // text-align: left;

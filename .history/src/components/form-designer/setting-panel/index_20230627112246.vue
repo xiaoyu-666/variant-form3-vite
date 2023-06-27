@@ -1,10 +1,10 @@
 <template>
   <el-container class="panel-container">
-    <el-tabs v-model="activeTab" style="height: 100%; overflow: hidden;width: 100%;">
+    <el-tabs v-model="activeTab" style="height: 100%; overflow: hidden">
       <el-tab-pane :label="i18nt('designer.hint.widgetSetting')" name="1">
         <el-scrollbar class="setting-scrollbar" :style="{height: scrollerHeight}">
 
-          <template v-if="(!settingBarShow(designer.selectedWidget) && !designer.selectedWidget.category)">
+          <template v-if="!!designer.selectedWidget && !designer.selectedWidget.category">
             <el-form :model="optionModel" size="small" label-position="left" label-width="120px" class="setting-form"
                      @submit.prevent>
               <el-collapse v-model="widgetActiveCollapseNames" class="setting-collapse">
@@ -33,7 +33,7 @@
             </el-form>
           </template>
 
-          <template v-if="(!settingBarShow(designer.selectedWidget) && !!designer.selectedWidget.category)">
+          <template v-if="(!!designer.selectedWidget && !!designer.selectedWidget.category)">
             <el-form :model="optionModel" size="small" label-position="left" label-width="120px" class="setting-form"
                      @submit.prevent>
               <el-collapse v-model="widgetActiveCollapseNames" class="setting-collapse">
@@ -63,7 +63,7 @@
 
           <template v-if="settingBarShow(designer.selectedWidget)">
             <div>
-              <el-empty  description="无内容，请从左侧设计表单" />
+              老师的课i复活节拉萨酱豆腐拉开圣诞节覅
             </div>
           </template>
         </el-scrollbar>
@@ -230,7 +230,7 @@
             return true
           }
         }
-        return false
+
       },
       showEventCollapse() {
         if (this.designerConfig['eventCollapse'] === undefined) {

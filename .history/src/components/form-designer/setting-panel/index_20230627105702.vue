@@ -1,10 +1,10 @@
 <template>
   <el-container class="panel-container">
-    <el-tabs v-model="activeTab" style="height: 100%; overflow: hidden;width: 100%;">
+    <el-tabs v-model="activeTab" style="height: 100%; overflow: hidden">
       <el-tab-pane :label="i18nt('designer.hint.widgetSetting')" name="1">
         <el-scrollbar class="setting-scrollbar" :style="{height: scrollerHeight}">
 
-          <template v-if="(!settingBarShow(designer.selectedWidget) && !designer.selectedWidget.category)">
+          <template v-if="!!designer.selectedWidget && !designer.selectedWidget.category">
             <el-form :model="optionModel" size="small" label-position="left" label-width="120px" class="setting-form"
                      @submit.prevent>
               <el-collapse v-model="widgetActiveCollapseNames" class="setting-collapse">
@@ -33,7 +33,7 @@
             </el-form>
           </template>
 
-          <template v-if="(!settingBarShow(designer.selectedWidget) && !!designer.selectedWidget.category)">
+          <template v-else-if="(!!designer.selectedWidget && !!designer.selectedWidget.category)">
             <el-form :model="optionModel" size="small" label-position="left" label-width="120px" class="setting-form"
                      @submit.prevent>
               <el-collapse v-model="widgetActiveCollapseNames" class="setting-collapse">
@@ -60,11 +60,8 @@
               </el-collapse>
             </el-form>
           </template>
-
-          <template v-if="settingBarShow(designer.selectedWidget)">
-            <div>
-              <el-empty  description="无内容，请从左侧设计表单" />
-            </div>
+          <template v-else-if="(!!designer.selectedWidget && !!designer.selectedWidget.category)">
+          无数据  
           </template>
         </el-scrollbar>
       </el-tab-pane>
@@ -166,12 +163,6 @@
 
     },
     watch: {
-      designer:{
-        deep:true,
-        handler(val){
-          console.log(val)
-        }
-      },
       'designer.selectedWidget': {
         handler(val) {
           if (!!val) {
@@ -221,17 +212,6 @@
       })
     },
     methods: {
-      settingBarShow(val){
-        if(val==null){
-          return true
-        }
-        if(val instanceof Object){
-          if(Object.keys(val).length==0){
-            return true
-          }
-        }
-        return false
-      },
       showEventCollapse() {
         if (this.designerConfig['eventCollapse'] === undefined) {
           return true

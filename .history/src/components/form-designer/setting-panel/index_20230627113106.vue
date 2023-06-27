@@ -63,7 +63,8 @@
 
           <template v-if="settingBarShow(designer.selectedWidget)">
             <div>
-              <el-empty  description="无内容，请从左侧设计表单" />
+              <el-empty  description="无组件，请设计表单" />
+              无内容，请到左侧设计表单
             </div>
           </template>
         </el-scrollbar>

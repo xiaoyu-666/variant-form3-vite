@@ -1,6 +1,6 @@
 <template>
   <el-container class="panel-container">
-    <el-tabs v-model="activeTab" style="height: 100%; overflow: hidden;width: 100%;">
+    <el-tabs v-model="activeTab" style="height: 100%; overflow: hidden">
       <el-tab-pane :label="i18nt('designer.hint.widgetSetting')" name="1">
         <el-scrollbar class="setting-scrollbar" :style="{height: scrollerHeight}">
 
@@ -63,7 +63,7 @@
 
           <template v-if="settingBarShow(designer.selectedWidget)">
             <div>
-              <el-empty  description="无内容，请从左侧设计表单" />
+              <el-empty description="无组件，请设计表单" />
             </div>
           </template>
         </el-scrollbar>

@@ -103,7 +103,7 @@
         type: Object,
         default: () => {
           return {
-            logoHeader: false,
+            logoHeader: true,
             languageMenu: true,  //是否显示语言切换菜单
             externalLink: true,  //是否显示GitHub、文档等外部链接
             formTemplates: true,  //是否显示表单模板
