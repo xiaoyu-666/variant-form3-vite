@@ -224,8 +224,6 @@ export default {
       designer: createDesigner(this),
 
       fieldList: [],
-
-      categoryList: [],
     };
   },
   provide() {
@@ -234,7 +232,6 @@ export default {
       getDesignerConfig: () => this.designerConfig,
       getBannedWidgets: () => this.bannedWidgets,
       getWebConfig: () => this.webConfig,
-      getCategoryList2: () => this.categoryList,
     };
   },
   created() {
@@ -484,12 +481,12 @@ export default {
       return this.$refs["formRef"].getSelectedWidgetRef();
     },
 
-    setFormConfig(formConfig) {
-      this.designer.setFormConfig(formConfig);
+    setFormConfig(formConfig){
+      this.designer.setFormConfig(formConfig)
     },
-    setCategory(categoryArr) {
-      this.categoryList=categoryArr
-    },
+    setCategory(categoryArr){
+      console.log(categoryArr)
+    }
     //TODO: 增加更多方法！！
   },
 };

@@ -114,8 +114,6 @@ export function createDesigner(vueInstance) {
       this.formConfig.formCategory=category
       this.formConfig.formName=name
       this.formConfig.formCode=code
-      this.formConfig.formNameDisabled=nameDisabled
-      this.formConfig.formCodeDisabled=codeDisabled
     },
     
     setSelected(selected) {

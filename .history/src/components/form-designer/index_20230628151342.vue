@@ -488,6 +488,7 @@ export default {
       this.designer.setFormConfig(formConfig);
     },
     setCategory(categoryArr) {
+     
       this.categoryList=categoryArr
     },
     //TODO: 增加更多方法！！

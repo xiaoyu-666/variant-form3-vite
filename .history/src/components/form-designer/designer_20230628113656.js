@@ -109,15 +109,6 @@ export function createDesigner(vueInstance) {
       return modifiedFlag
     },
 
-    setFormConfig(formConfigObj){
-      const {name,code,category,nameDisabled,codeDisabled}=formConfigObj
-      this.formConfig.formCategory=category
-      this.formConfig.formName=name
-      this.formConfig.formCode=code
-      this.formConfig.formNameDisabled=nameDisabled
-      this.formConfig.formCodeDisabled=codeDisabled
-    },
-    
     setSelected(selected) {
       if (!selected) {
         this.clearSelected()

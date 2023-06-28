@@ -19,35 +19,21 @@
           >
             <el-tree-select
               v-model="formConfig.formCategory"
-              :data="categotyData"
-              :props="categoryProp"
-              check-strictly
-              default-expand-all
+              :data="data"
               :render-after-expand="false"
-              node-key="name"
-              highlight-current
-              :expand-on-click-node="false"
             />
           </el-form-item>
           <el-form-item
             label-width="95"
             :label="i18nt('designer.setting.formName')"
           >
-            <el-input
-              type="text"
-              v-model="formConfig.formName"
-              :disabled="formConfig.formNameDisabled"
-            ></el-input>
+            <el-input type="text" v-model="formConfig.formName"></el-input>
           </el-form-item>
           <el-form-item
             label-width="95"
             :label="i18nt('designer.setting.formCode')"
           >
-            <el-input
-              type="text"
-              v-model="formConfig.formCode"
-              :disabled="formConfig.formCodeDisabled"
-            ></el-input>
+            <el-input type="text" v-model="formConfig.formCode"></el-input>
           </el-form-item>
         </el-collapse-item>
         <el-collapse-item
@@ -333,14 +319,105 @@ export default {
     designer: Object,
     formConfig: Object,
   },
-  inject: ["getDesignerConfig", "getCategoryList2"],
+  inject: ["getDesignerConfig"],
   data() {
     return {
       designerConfig: this.getDesignerConfig(),
-      categoryProp: {
-        label: "name",
+
+
+
+
+
+      data:[
+  {
+    "id": 1,
+    "parentId": -1,
+    "children": [
+      {
+        "id": 3,
+        "parentId": 1,
+        "children": [],
+        "name": "请假",
+        "code": "12",
+        "sort": 6,
+        "createTime": "2023-05-30 15:51:11",
+        "updateTime": "2023-05-30 16:45:38"
       },
+      {
+        "id": 8,
+        "parentId": 1,
+        "children": [],
+        "name": "用车",
+        "code": "car",
+        "sort": 0,
+        "createTime": "2023-06-16 10:43:34"
+      }
+    ],
+    "name": "行政管理",
+    "code": "1",
+    "sort": 0,
+    "createTime": "2023-05-30 15:50:20",
+    "updateTime": "2023-05-30 16:31:23"
+  },
+  {
+    "id": 2,
+    "parentId": -1,
+    "children": [
+      {
+        "id": 4,
+        "parentId": 2,
+        "children": [],
+        "name": "合同盖章",
+        "code": "234",
+        "sort": 0,
+        "createTime": "2023-05-30 16:00:53",
+        "updateTime": "2023-05-30 17:03:55"
+      }
+    ],
+    "name": "合同管理",
+    "code": "2",
+    "sort": 0,
+    "createTime": "2023-05-30 15:50:34",
+    "updateTime": "2023-05-30 16:31:28"
+  },
+  {
+    "id": 5,
+    "parentId": -1,
+    "children": [
+      {
+        "id": 7,
+        "parentId": 5,
+        "children": [],
+        "name": "测试1",
+        "code": "987",
+        "sort": 5,
+        "createTime": "2023-05-30 17:28:05"
+      },
+      {
+        "id": 6,
+        "parentId": 5,
+        "children": [],
+        "name": "测试",
+        "code": "9991",
+        "sort": 0,
+        "createTime": "2023-05-30 17:07:05",
+        "updateTime": "2023-05-30 17:12:00"
+      }
+    ],
+    "name": "测试类别",
+    "code": "999",
+    "remark": "",
+    "sort": 0,
+    "createTime": "2023-05-30 17:06:31",
+    "updateTime": "2023-05-30 17:17:18"
+  }
+],
+
+
+
+
       formActiveCollapseNames: ["0", "1", "2"],
+
       formSizes: [
         { label: "default", value: "" },
         { label: "large", value: "large" },
@@ -368,19 +445,6 @@ export default {
         //'onFormValidate':     'onFormValidate() {',
       },
     };
-  },
-  computed:{
-    categotyData(){
-      return this.getCategoryList2()
-    } 
-  },
-  watch: {
-    categotyData: {
-      deep: true,
-      handler(val) {
-        console.log("888888", val);
-      },
-    },
   },
   created() {
     //导入表单JSON后需要重新加载自定义CSS样式！！！

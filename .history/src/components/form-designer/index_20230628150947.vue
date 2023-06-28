@@ -234,8 +234,16 @@ export default {
       getDesignerConfig: () => this.designerConfig,
       getBannedWidgets: () => this.bannedWidgets,
       getWebConfig: () => this.webConfig,
-      getCategoryList2: () => this.categoryList,
+      getCategoryList: () => this.categoryList,
     };
+  },
+  watch:{
+    categoryList:{
+      deep:true,
+      handler(val) {
+        console.log("11111", val);
+      },
+    }
   },
   created() {
     this.vsCodeFlag = getQueryParam("vscode") == 1;
@@ -488,6 +496,7 @@ export default {
       this.designer.setFormConfig(formConfig);
     },
     setCategory(categoryArr) {
+      console.log("传入的值",categoryArr)
       this.categoryList=categoryArr
     },
     //TODO: 增加更多方法！！

@@ -234,7 +234,7 @@ export default {
       getDesignerConfig: () => this.designerConfig,
       getBannedWidgets: () => this.bannedWidgets,
       getWebConfig: () => this.webConfig,
-      getCategoryList2: () => this.categoryList,
+      getCategoryList: () => this.categoryList,
     };
   },
   created() {
@@ -488,7 +488,7 @@ export default {
       this.designer.setFormConfig(formConfig);
     },
     setCategory(categoryArr) {
-      this.categoryList=categoryArr
+      console.log(categoryArr);
     },
     //TODO: 增加更多方法！！
   },

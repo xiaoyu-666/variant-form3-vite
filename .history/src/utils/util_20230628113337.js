@@ -346,9 +346,7 @@ export function getDefaultFormConfig() {
   return {
     formCategory:'',
     formName:'',
-    formNameDisabled:false,
-    formCode:'',
-    formCodeDisabled:false,
+    formCode:''
     modelName: 'formData',
     refName: 'vForm',
     rulesName: 'rules',

@@ -165,8 +165,6 @@ export default {
 
     setting: {
       formCategory:'Form Category',
-      formName:'Form Name',
-      formCode:'Form Code',
       formConfig:'Form Config',
       basicSetting: 'Basic Setting',
       attributeSetting: 'Attribute Setting',

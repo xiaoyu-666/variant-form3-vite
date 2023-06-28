@@ -164,10 +164,6 @@ export default {
     },
 
     setting: {
-      formCategory:'表单分类',
-      formName:'表单名称',
-      formCode:'表单编码',
-      formConfig:'表单配置',
       basicSetting: '基本属性',
       attributeSetting: '属性设置',
       commonSetting: '常见属性',

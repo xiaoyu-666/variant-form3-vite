@@ -164,9 +164,9 @@ export default {
     },
 
     setting: {
-      formCategory:'Form Category',
-      formName:'Form Name',
-      formCode:'Form Code',
+      formCategory:'表单分类',
+      formName:'表单名称',
+      formCode:'表单编码',
       formConfig:'Form Config',
       basicSetting: 'Basic Setting',
       attributeSetting: 'Attribute Setting',

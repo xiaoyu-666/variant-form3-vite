@@ -345,10 +345,6 @@ export function getQueryParam(variable) {
 export function getDefaultFormConfig() {
   return {
     formCategory:'',
-    formName:'',
-    formNameDisabled:false,
-    formCode:'',
-    formCodeDisabled:false,
     modelName: 'formData',
     refName: 'vForm',
     rulesName: 'rules',

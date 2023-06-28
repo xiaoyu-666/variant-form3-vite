@@ -198,7 +198,7 @@ export default {
         };
       },
     },
-
+   
     /* 全局数据源变量 */
     globalDsv: {
       type: Object,
@@ -224,8 +224,6 @@ export default {
       designer: createDesigner(this),
 
       fieldList: [],
-
-      categoryList: [],
     };
   },
   provide() {
@@ -234,7 +232,7 @@ export default {
       getDesignerConfig: () => this.designerConfig,
       getBannedWidgets: () => this.bannedWidgets,
       getWebConfig: () => this.webConfig,
-      getCategoryList2: () => this.categoryList,
+      
     };
   },
   created() {
@@ -484,12 +482,6 @@ export default {
       return this.$refs["formRef"].getSelectedWidgetRef();
     },
 
-    setFormConfig(formConfig) {
-      this.designer.setFormConfig(formConfig);
-    },
-    setCategory(categoryArr) {
-      this.categoryList=categoryArr
-    },
     //TODO: 增加更多方法！！
   },
 };

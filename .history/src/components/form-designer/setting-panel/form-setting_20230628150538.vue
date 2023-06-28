@@ -19,7 +19,7 @@
           >
             <el-tree-select
               v-model="formConfig.formCategory"
-              :data="categotyData"
+              :data="data"
               :props="categoryProp"
               check-strictly
               default-expand-all
@@ -33,21 +33,13 @@
             label-width="95"
             :label="i18nt('designer.setting.formName')"
           >
-            <el-input
-              type="text"
-              v-model="formConfig.formName"
-              :disabled="formConfig.formNameDisabled"
-            ></el-input>
+            <el-input type="text" v-model="formConfig.formName" :disabled="formConfig.formNameDisabled"></el-input>
           </el-form-item>
           <el-form-item
             label-width="95"
             :label="i18nt('designer.setting.formCode')"
           >
-            <el-input
-              type="text"
-              v-model="formConfig.formCode"
-              :disabled="formConfig.formCodeDisabled"
-            ></el-input>
+            <el-input type="text" v-model="formConfig.formCode" :disabled="formConfig.formCodeDisabled"></el-input>
           </el-form-item>
         </el-collapse-item>
         <el-collapse-item
@@ -333,13 +325,14 @@ export default {
     designer: Object,
     formConfig: Object,
   },
-  inject: ["getDesignerConfig", "getCategoryList2"],
+  inject: ["getDesignerConfig","getCategoryList"],
   data() {
     return {
       designerConfig: this.getDesignerConfig(),
       categoryProp: {
         label: "name",
       },
+      categotyData: this.getCategoryList(),
       formActiveCollapseNames: ["0", "1", "2"],
       formSizes: [
         { label: "default", value: "" },
@@ -369,19 +362,7 @@ export default {
       },
     };
   },
-  computed:{
-    categotyData(){
-      return this.getCategoryList2()
-    } 
-  },
-  watch: {
-    categotyData: {
-      deep: true,
-      handler(val) {
-        console.log("888888", val);
-      },
-    },
-  },
+  watch: {},
   created() {
     //导入表单JSON后需要重新加载自定义CSS样式！！！
     this.designer.handleEvent("form-json-imported", () => {

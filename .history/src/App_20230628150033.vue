@@ -3,7 +3,7 @@
     <div id="app">
       <VFormDesigner
         ref="vfDesignerRef"
-       
+        :formConfigCus="configObj"
         :web-config="webConfig"
         :global-dsv="globalDsv"
       >
@@ -59,7 +59,7 @@ export default {
         name: "123",
         nameDisabled:true,
         code: "456",
-        codeDisabled:true,
+        codeDisabled:false,
         category: "测试",
       });
       this.$refs.vfDesignerRef.setCategory([

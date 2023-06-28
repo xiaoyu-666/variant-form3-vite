@@ -110,14 +110,14 @@ export function createDesigner(vueInstance) {
     },
 
     setFormConfig(formConfigObj){
-      const {name,code,category,nameDisabled,codeDisabled}=formConfigObj
+      const {name,code,category}=formConfigObj
       this.formConfig.formCategory=category
       this.formConfig.formName=name
       this.formConfig.formCode=code
-      this.formConfig.formNameDisabled=nameDisabled
-      this.formConfig.formCodeDisabled=codeDisabled
     },
-    
+    setCategory(arr){
+      console.log(arr)
+    },
     setSelected(selected) {
       if (!selected) {
         this.clearSelected()

@@ -234,7 +234,7 @@ export default {
       getDesignerConfig: () => this.designerConfig,
       getBannedWidgets: () => this.bannedWidgets,
       getWebConfig: () => this.webConfig,
-      getCategoryList2: () => this.categoryList,
+      getCategoryList: () => this.categoryList,
     };
   },
   created() {

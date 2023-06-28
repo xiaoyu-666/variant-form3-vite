@@ -11,44 +11,9 @@
       <el-collapse v-model="formActiveCollapseNames" class="setting-collapse">
         <el-collapse-item
           name="0"
-          :title="i18nt('designer.setting.formConfig')"
+          :title="i18nt('designer.setting.basicSetting')"
         >
-          <el-form-item
-            label-width="95"
-            :label="i18nt('designer.setting.formCategory')"
-          >
-            <el-tree-select
-              v-model="formConfig.formCategory"
-              :data="categotyData"
-              :props="categoryProp"
-              check-strictly
-              default-expand-all
-              :render-after-expand="false"
-              node-key="name"
-              highlight-current
-              :expand-on-click-node="false"
-            />
-          </el-form-item>
-          <el-form-item
-            label-width="95"
-            :label="i18nt('designer.setting.formName')"
-          >
-            <el-input
-              type="text"
-              v-model="formConfig.formName"
-              :disabled="formConfig.formNameDisabled"
-            ></el-input>
-          </el-form-item>
-          <el-form-item
-            label-width="95"
-            :label="i18nt('designer.setting.formCode')"
-          >
-            <el-input
-              type="text"
-              v-model="formConfig.formCode"
-              :disabled="formConfig.formCodeDisabled"
-            ></el-input>
-          </el-form-item>
+          234
         </el-collapse-item>
         <el-collapse-item
           name="1"
@@ -333,14 +298,13 @@ export default {
     designer: Object,
     formConfig: Object,
   },
-  inject: ["getDesignerConfig", "getCategoryList2"],
+  inject: ["getDesignerConfig"],
   data() {
     return {
       designerConfig: this.getDesignerConfig(),
-      categoryProp: {
-        label: "name",
-      },
-      formActiveCollapseNames: ["0", "1", "2"],
+
+      formActiveCollapseNames: ["1", "2"],
+
       formSizes: [
         { label: "default", value: "" },
         { label: "large", value: "large" },
@@ -368,19 +332,6 @@ export default {
         //'onFormValidate':     'onFormValidate() {',
       },
     };
-  },
-  computed:{
-    categotyData(){
-      return this.getCategoryList2()
-    } 
-  },
-  watch: {
-    categotyData: {
-      deep: true,
-      handler(val) {
-        console.log("888888", val);
-      },
-    },
   },
   created() {
     //导入表单JSON后需要重新加载自定义CSS样式！！！

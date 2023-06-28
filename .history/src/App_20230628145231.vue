@@ -3,7 +3,7 @@
     <div id="app">
       <VFormDesigner
         ref="vfDesignerRef"
-       
+        :formConfigCus="configObj"
         :web-config="webConfig"
         :global-dsv="globalDsv"
       >
@@ -57,9 +57,7 @@ export default {
     nextTick(() => {
       this.$refs.vfDesignerRef.setFormConfig({
         name: "123",
-        nameDisabled:true,
         code: "456",
-        codeDisabled:true,
         category: "测试",
       });
       this.$refs.vfDesignerRef.setCategory([

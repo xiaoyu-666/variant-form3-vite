@@ -198,6 +198,16 @@ export default {
         };
       },
     },
+    formConfigCus: {
+      type: Object,
+      default: () => {
+        return {
+          categotyData: [],
+          name: "",
+          code: "",
+        };
+      },
+    },
 
     /* 全局数据源变量 */
     globalDsv: {
@@ -224,8 +234,6 @@ export default {
       designer: createDesigner(this),
 
       fieldList: [],
-
-      categoryList: [],
     };
   },
   provide() {
@@ -234,7 +242,7 @@ export default {
       getDesignerConfig: () => this.designerConfig,
       getBannedWidgets: () => this.bannedWidgets,
       getWebConfig: () => this.webConfig,
-      getCategoryList2: () => this.categoryList,
+      getFormCongifCus: () => this.formConfigCus,
     };
   },
   created() {
@@ -484,12 +492,6 @@ export default {
       return this.$refs["formRef"].getSelectedWidgetRef();
     },
 
-    setFormConfig(formConfig) {
-      this.designer.setFormConfig(formConfig);
-    },
-    setCategory(categoryArr) {
-      this.categoryList=categoryArr
-    },
     //TODO: 增加更多方法！！
   },
 };

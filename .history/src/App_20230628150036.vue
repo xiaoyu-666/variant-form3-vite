@@ -3,7 +3,7 @@
     <div id="app">
       <VFormDesigner
         ref="vfDesignerRef"
-       
+        :formConfigCus="configObj"
         :web-config="webConfig"
         :global-dsv="globalDsv"
       >

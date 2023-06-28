@@ -340,6 +340,7 @@ export default {
       categoryProp: {
         label: "name",
       },
+      categotyData: this.getCategoryList2(),
       formActiveCollapseNames: ["0", "1", "2"],
       formSizes: [
         { label: "default", value: "" },
@@ -368,11 +369,6 @@ export default {
         //'onFormValidate':     'onFormValidate() {',
       },
     };
-  },
-  computed:{
-    categotyData(){
-      return this.getCategoryList2()
-    } 
   },
   watch: {
     categotyData: {
